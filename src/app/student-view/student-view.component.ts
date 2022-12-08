@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-view.component.css']
 })
 export class StudentViewComponent {
-
-}
+  constructor(private api:ApiService){
+    api.fetchStudent().subscribe(
+      (response)=>
+      {
+        this.data=response
+      }
+    )git branch -api
+  }
+  data:any=[]
+  }
